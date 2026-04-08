@@ -1,4 +1,4 @@
-src
-dist
-node_modules
-src_demo
+/src
+/dist
+/node_modules
+/src_demo

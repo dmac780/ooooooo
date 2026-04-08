@@ -1,0 +1,47 @@
+<script>
+  const title = "Home";
+  const description = "My ooooooo site";
+</script>
+
+<section>
+  <div class="container">
+    <h1>Hellooooooo World</h1>
+    <p>Edit src/index.html to get started.</p>
+    <div class="col">
+      <div component="demo-counter"></div>
+      <div component="demo-swatch"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --bg-color: #0a0a0a;
+    --text-color: #d4d4d4;
+    --font-family: monospace;
+    --content-width: 1000px;
+    --content-gutter: 2rem;
+  }
+  body {
+    margin: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+  }
+  main {
+    width: min(100% - var(--content-gutter) * 2, var(--content-width));
+    margin-inline: auto;
+    padding-block: 3rem;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--content-gutter);
+  }
+  .col {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+</style>

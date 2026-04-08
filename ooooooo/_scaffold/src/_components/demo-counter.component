@@ -1,0 +1,27 @@
+<button class="btn">
+  Count: <span class="value" data-bind="demo-counter">0</span>
+</button>
+
+<style>
+  .btn {
+    background: transparent;
+    border: 3px solid var(--text-color, #f0f0f0);
+    color: var(--text-color, #f0f0f0);
+    padding: 8px 14px;
+    font-variant-numeric: tabular-nums;
+  }
+  .value {
+    display: inline-block;
+    width: 2ch;
+  }
+</style>
+
+<script hydrate="load">
+  const btn = root.querySelector(".btn");
+
+  __defineState("demo-counter", 0);
+
+  btn.addEventListener("click", () => {
+    __updateState("demo-counter", __getState("demo-counter") + 1);
+  });
+</script>

@@ -1,0 +1,21 @@
+<div class="swatch"></div>
+
+<style>
+  .swatch {
+    width: 100px;
+    height: 100px;
+    background: #444;
+  }
+</style>
+
+<script hydrate="load">
+  const swatch = root.querySelector(".swatch");
+
+  const randomColor = (seed = 0) => {
+    return `hsl(${((Number(seed) || 0) * 37) % 360} 65% 50%)`;
+  };
+
+  __watchState(["demo-counter"], () => {
+    swatch.style.background = randomColor( __getState("demo-counter") );
+  });
+</script>
