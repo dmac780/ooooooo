@@ -147,11 +147,12 @@ Define variables at the top of .html files inside a `<script>` to prepopulate co
 
 Besides `title` / `description` / `template`, you can set **`mount`** (which `[…]` slot in the template receives the page body; default `content`) and any other keys you reference as `[name]` in the template.
 
-you can also include scripts/stylesheets at build time with asset delivery options
+you can also include scripts/stylesheets at build time with asset delivery options.
 
 ```js
-  __injectStyle("static/css/custom-styles.css", "stylesheet");
-  __injectScript("https://example.com/script.js", "async");
+  __injectStyle("static/css/custom-styles.css", "preload");
+  __injectStyle("static/css/print.css", "media");
+  __injectScript("https://example.com/script.js", "defer");
 ```
 
 ooooooo does not copy over content within _ prefixed directories, making it an ideal place to organize components/templates/data. Project Structure:
