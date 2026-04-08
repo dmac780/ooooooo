@@ -57,5 +57,18 @@ export function runInit() {
     console.log(`  ${YELLOW}skipped${RESET} ooo.config.js (already exists)`);
   }
 
-  console.log(`\n${GREEN}✓ Done. Run \`ooo build\` to build.${RESET}\n`);
+  const pkgPath = path.join(process.cwd(), "package.json");
+  if (!fs.existsSync(pkgPath)) {
+    fs.writeFileSync(pkgPath, JSON.stringify({ type: "module" }, null, 2) + "\n");
+    console.log(`  ${GREEN}created${RESET} package.json`);
+  } else {
+    const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
+    if (pkg.type !== "module") {
+      pkg.type = "module";
+      fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n");
+      console.log(`  ${GREEN}updated${RESET} package.json — added "type": "module"`);
+    }
+  }
+
+  console.log(`\n${GREEN}✓ Done. Run \`npx ooo build\` to build.${RESET}\n`);
 }
