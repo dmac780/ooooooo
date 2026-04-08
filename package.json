@@ -1,17 +1,17 @@
 {
   "name": "ooooooo",
   "version": "0.0.1",
+  "type": "module",
   "main": "build.js",
   "bin": {
-    "ooo": "./ooooooo/cli.js"
+    "ooo": "./ooooooo/cli.mjs"
   },
   "scripts": {
     "build": "node build.js",
-    "init": "node ooooooo/cli.js init"
+    "init": "node ooooooo/cli.mjs init"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "type": "module"
+  "description": ""
 }

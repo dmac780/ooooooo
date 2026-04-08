@@ -176,9 +176,9 @@ ooo.config.js       ooooooo settings
 ### installation
 `npm install github:dmac780/ooooooo`
 
-`npm ooo init` (scaffold new project)
+`npx ooo init` (scaffold new project)
 
-`npm run build` (or `npx ooo build`)
+`npx ooo build`
 
 then serve with whatever.
 
